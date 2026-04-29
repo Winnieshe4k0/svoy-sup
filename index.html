@@ -56,6 +56,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-botto
 .hero h1{font-family:'Russo One',sans-serif;font-size:clamp(22px,4.5vw,42px);color:#fff;line-height:1.15;margin-bottom:20px;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:2;max-width:560px}
 .hero-plaque{display:inline-block;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);padding:7px 24px;border-radius:28px;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;position:relative;z-index:2}
 .hero-stat{font-size:15px;color:rgba(255,255,255,.62);font-weight:600;letter-spacing:.5px;margin-bottom:36px;position:relative;z-index:2}
+.mob-br{display:none}
+@media(max-width:768px){.mob-br{display:block}}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
 .btn-w{background:#fff;color:var(--red);border:none;padding:15px 36px;border-radius:36px;font:800 16px 'Nunito',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;display:inline-block}
 .btn-w:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.22)}
@@ -485,7 +487,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 <section class="hero" id="home">
   <h1>Прокат сапбордов и&nbsp;каяков в&nbsp;Москве</h1>
   <div class="hero-plaque">Строгино · Серебряный Бор · Живописный мост</div>
-  <p class="hero-stat">Поставили на&nbsp;сап более 17.000 человек</p>
+  <p class="hero-stat">Поставили на&nbsp;сап<br class="mob-br"> более 17.000 человек</p>
   <div class="hero-btns">
     <a href="https://n1462790.yclients.com/select-city/2/select-branch?previousStepUrl=%2Fcompany%2F1322144%2Factivity%2Fselect%3Fo%3Dm-1act2025-06-24&amp;o=m-1act2025-06-24" target="_blank" class="btn-w">Забронировать</a>
     <a href="#services" class="btn-ow">Наши услуги</a>
@@ -510,7 +512,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 <!-- INTRO TEXT -->
 <section style="background:#fff;padding:36px 24px 0">
   <div class="si">
-    <p style="font-size:15px;color:var(--muted);line-height:1.85">Клуб <strong style="color:var(--txt)">Свой Сап</strong> предлагает прокат сапбордов и каяков в Москве на двух станциях — <strong style="color:var(--txt)">Строгино</strong> (база Москомспорта) и <strong style="color:var(--txt)">Серебряный Бор</strong> у Живописного моста. Покататься на сапе можно даже без опыта, если записаться в группу или пройти экспресс обучение. Для компаний доступны большие сапборды вместимостью до&nbsp;8&nbsp;человек, а для любителей комфорта — сапы с электромотором.</p>
+    <p style="font-size:15px;color:var(--muted);line-height:1.85">Клуб <strong style="color:var(--txt)">Свой Сап</strong> предлагает прокат сапбордов и&nbsp;каяков в&nbsp;Москве на&nbsp;двух станциях — <strong style="color:var(--txt)">Строгино</strong> (база Москомспорта) и&nbsp;<strong style="color:var(--txt)">Серебряный Бор</strong> у&nbsp;Живописного моста. Покататься на&nbsp;сапе можно даже без&nbsp;опыта, если записаться в&nbsp;группу или&nbsp;пройти экспресс обучение. Для компаний доступны большие сапборды вместимостью до&nbsp;8&nbsp;человек, а&nbsp;для любителей комфорта — сапы с&nbsp;электромотором.</p>
   </div>
 </section>
 
@@ -948,6 +950,72 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 
     <p class="tariff-note" style="margin-bottom:16px">Стоимость указана за&nbsp;1&nbsp;участника. Максимальный размер группы — 10&nbsp;человек. Прогулки для большего числа гостей обсуждаются индивидуально.</p>
 
+    <div class="m-acc" style="margin-bottom:18px">
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Ответы на распространённые вопросы<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-faq">
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F555; Во сколько приезжать?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Приходите за 20 минут до записи, чтобы успеть припарковаться и переодеться.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F327;&#xFE0F; А если дождь?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Дождь не является причиной отмены. В случае грозы, ветра выше 6 м/с или урагана не выпустим на воду и предложим возврат или перенос.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4C5; Могу перенести запись?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Отменяем бронь не позднее 48 часов до начала. При записи день в день отмены и переноса нет.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F3C4; Нужен ли опыт?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Это прогулка для новичков — опыт не нужен. Инструктор расскажет всё на берегу и сопроводит по маршруту.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F392; Что взять с собой?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Купальник или одежду, которую можно намочить, смену одежды, полотенце, воду, головной убор. Всё снаряжение включено.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4F8; Делаете ли фотографии?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Да, бесплатная фотосессия по желанию — загрузим на Яндекс Диск.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F6B7; Можно ли с детьми?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Нет, это прогулка для новичков. Не подвергайте детей опасности. Сначала научитесь сами стоять на доске.</div></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Правила клуба<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Арендуя оборудование, гость подтверждает, что <strong style="color:var(--txt)">прошёл обучение и&nbsp;знает технику безопасности на&nbsp;воде</strong>, умеет действовать при ухудшении погоды, может рассчитать силы для возвращения на&nbsp;станцию и&nbsp;в&nbsp;случае необходимости <strong style="color:var(--txt)">в&nbsp;состоянии нести оборудование в&nbsp;руках</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Перед выходом на&nbsp;воду гость должен <strong style="color:var(--txt)">самостоятельно убедиться в&nbsp;исправности оборудования</strong>. При вопросах — уточнить у&nbsp;сотрудника на&nbsp;станции.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Мы работаем по&nbsp;записи. <strong style="color:var(--txt)">При опоздании более чем на&nbsp;15 минут время сеанса начинает идти автоматически.</strong> После вашего сеанса начинается следующий.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Дождь не&nbsp;является причиной для отмены. В&nbsp;случае грозы, ветра выше 6&nbsp;м/с или урагана мы не&nbsp;выпустим вас на&nbsp;воду и&nbsp;предложим возврат или перенос. Если вы не&nbsp;можете приехать — <strong style="color:var(--txt)">отменяем бронь не&nbsp;позднее 48&nbsp;часов до&nbsp;начала сеанса. При записи день в&nbsp;день отмены и&nbsp;переноса нет.</strong></span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">При порче оборудования по&nbsp;вашей вине вы обязаны <strong style="color:var(--txt)">возместить его стоимость по&nbsp;рыночной цене и&nbsp;компенсировать дни простоя</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№6</span><span class="m-rule-txt"><strong style="color:var(--txt)">Сотрудники станции ответственности за&nbsp;оставленные вещи не&nbsp;несут.</strong></span></div>
+          <div class="m-sub-title">Отказ от претензий</div>
+          <div class="m-disclaimer">
+            <p>Я принимаю на&nbsp;себя всю ответственность за&nbsp;возможные травмы и&nbsp;последствия несчастных случаев во&nbsp;время нахождения на&nbsp;воде.</p>
+            <p style="margin-top:8px">Я физически и&nbsp;морально подготовлен и&nbsp;принимаю все риски, связанные с&nbsp;водными активностями.</p>
+            <p style="margin-top:8px">Я осознаю, что ценные вещи на&nbsp;воде могут утонуть или испортиться. Клуб за&nbsp;это ответственности не&nbsp;несёт.</p>
+            <p style="margin-top:8px">Вы выражаете согласие на&nbsp;фото- и&nbsp;видеосъёмку и&nbsp;её размещение на&nbsp;сайте и&nbsp;в&nbsp;наших соцсетях. Если хотите отказаться — сообщите сотрудникам на&nbsp;станции.</p>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Техника безопасности<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Выход на&nbsp;воду осуществляется исключительно <strong style="color:var(--txt)">в&nbsp;спасательном жилете и&nbsp;со&nbsp;страховочным лишем на&nbsp;ноге</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Запрещается находиться на&nbsp;линии судового хода. При движении вдоль реки — <strong style="color:var(--txt)">не&nbsp;далее 5&nbsp;метров от&nbsp;берега</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Запрещается выход на&nbsp;воду при <strong style="color:var(--txt)">ветре сильнее 7&nbsp;м/с, грозе или урагане</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Запрещено стоять <strong style="color:var(--txt)">рядом с&nbsp;любыми твёрдыми объектами</strong>: пирсом, причалом, яхтами и&nbsp;т.&nbsp;д.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">К&nbsp;выходу на&nbsp;воду не&nbsp;допускаются: <strong style="color:var(--txt)">гости в&nbsp;состоянии алкогольного или наркотического опьянения, с&nbsp;медицинскими противопоказаниями, не&nbsp;умеющие плавать</strong>.</span></div>
+        </div></div>
+      </div>
+    </div>
+
     <a href="https://n1462790.yclients.com/select-city/2/select-branch?previousStepUrl=%2Fcompany%2F1322144%2Factivity%2Fselect%3Fo%3Dm-1act2025-06-24&amp;o=m-1act2025-06-24" target="_blank" class="mcta">Записаться на прогулку</a>
   </div>
 </div>
@@ -992,6 +1060,72 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       </ul>
     </div>
 
+    <div class="m-acc" style="margin-bottom:18px">
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Ответы на распространённые вопросы<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-faq">
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F555; Во сколько приезжать?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Приходите за 20 минут до записи, чтобы успеть припарковаться и переодеться.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F327;&#xFE0F; А если дождь?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Дождь не является причиной отмены. В случае грозы, ветра выше 6 м/с или урагана не выпустим на воду и предложим возврат или перенос.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4C5; Могу перенести запись?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Отменяем бронь не позднее 48 часов до начала. При записи день в день отмены и переноса нет.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F9E0; Нужны ли права или опыт?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Нет. Управление интуитивное — браслет регулирует скорость, инструктор объяснит за 5 минут.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F300; Что если упаду?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Мотор автоматически отключается при падении. Жилет держит на плаву.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F6B7; Одна доска — один человек?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Да, моторный сап рассчитан на одного участника.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4CD; Как далеко можно заплыть?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">В пределах разрешённой зоны — инструктор покажет границы перед стартом.</div></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Правила клуба<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Арендуя оборудование, гость подтверждает, что <strong style="color:var(--txt)">прошёл обучение и&nbsp;знает технику безопасности на&nbsp;воде</strong>, умеет действовать при ухудшении погоды, может рассчитать силы для возвращения на&nbsp;станцию и&nbsp;в&nbsp;случае необходимости <strong style="color:var(--txt)">в&nbsp;состоянии нести оборудование в&nbsp;руках</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Перед выходом на&nbsp;воду гость должен <strong style="color:var(--txt)">самостоятельно убедиться в&nbsp;исправности оборудования</strong>. При вопросах — уточнить у&nbsp;сотрудника на&nbsp;станции.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Мы работаем по&nbsp;записи. <strong style="color:var(--txt)">При опоздании более чем на&nbsp;15 минут время сеанса начинает идти автоматически.</strong> После вашего сеанса начинается следующий.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Дождь не&nbsp;является причиной для отмены. В&nbsp;случае грозы, ветра выше 6&nbsp;м/с или урагана мы не&nbsp;выпустим вас на&nbsp;воду и&nbsp;предложим возврат или перенос. Если вы не&nbsp;можете приехать — <strong style="color:var(--txt)">отменяем бронь не&nbsp;позднее 48&nbsp;часов до&nbsp;начала сеанса. При записи день в&nbsp;день отмены и&nbsp;переноса нет.</strong></span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">При порче оборудования по&nbsp;вашей вине вы обязаны <strong style="color:var(--txt)">возместить его стоимость по&nbsp;рыночной цене и&nbsp;компенсировать дни простоя</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№6</span><span class="m-rule-txt"><strong style="color:var(--txt)">Сотрудники станции ответственности за&nbsp;оставленные вещи не&nbsp;несут.</strong></span></div>
+          <div class="m-sub-title">Отказ от претензий</div>
+          <div class="m-disclaimer">
+            <p>Я принимаю на&nbsp;себя всю ответственность за&nbsp;возможные травмы и&nbsp;последствия несчастных случаев во&nbsp;время нахождения на&nbsp;воде.</p>
+            <p style="margin-top:8px">Я физически и&nbsp;морально подготовлен и&nbsp;принимаю все риски, связанные с&nbsp;водными активностями.</p>
+            <p style="margin-top:8px">Я осознаю, что ценные вещи на&nbsp;воде могут утонуть или испортиться. Клуб за&nbsp;это ответственности не&nbsp;несёт.</p>
+            <p style="margin-top:8px">Вы выражаете согласие на&nbsp;фото- и&nbsp;видеосъёмку и&nbsp;её размещение на&nbsp;сайте и&nbsp;в&nbsp;наших соцсетях. Если хотите отказаться — сообщите сотрудникам на&nbsp;станции.</p>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Техника безопасности<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Выход на&nbsp;воду осуществляется исключительно <strong style="color:var(--txt)">в&nbsp;спасательном жилете и&nbsp;со&nbsp;страховочным лишем на&nbsp;ноге</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Запрещается находиться на&nbsp;линии судового хода. При движении вдоль реки — <strong style="color:var(--txt)">не&nbsp;далее 5&nbsp;метров от&nbsp;берега</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Запрещается выход на&nbsp;воду при <strong style="color:var(--txt)">ветре сильнее 7&nbsp;м/с, грозе или урагане</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Запрещено стоять <strong style="color:var(--txt)">рядом с&nbsp;любыми твёрдыми объектами</strong>: пирсом, причалом, яхтами и&nbsp;т.&nbsp;д.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">К&nbsp;выходу на&nbsp;воду не&nbsp;допускаются: <strong style="color:var(--txt)">гости в&nbsp;состоянии алкогольного или наркотического опьянения, с&nbsp;медицинскими противопоказаниями, не&nbsp;умеющие плавать</strong>.</span></div>
+        </div></div>
+      </div>
+    </div>
+
     <a href="https://n1462790.yclients.com/select-city/2/select-branch?previousStepUrl=%2Fcompany%2F1322144%2Factivity%2Fselect%3Fo%3Dm-1act2025-06-24&amp;o=m-1act2025-06-24" target="_blank" class="mcta">Забронировать</a>
   </div>
 </div>
@@ -1022,8 +1156,70 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       </ul>
     </div>
 
-    <a href="https://n1462790.yclients.com/select-city/2/select-branch?previousStepUrl=%2Fcompany%2F1322144%2Factivity%2Fselect%3Fo%3Dm-1act2025-06-24&amp;o=m-1act2025-06-24" target="_blank" class="mcta">Забронировать</a>
-    <p class="mnote">Запись доступна на&nbsp;станцию в&nbsp;Строгино.</p>
+    <div class="m-acc" style="margin-bottom:18px">
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Ответы на распространённые вопросы<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-faq">
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F555; Во сколько приезжать?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Приходите за 20 минут до записи, чтобы успеть припарковаться и переодеться.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F327;&#xFE0F; А если дождь?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Дождь не является причиной отмены. В случае грозы, ветра выше 6 м/с или урагана не выпустим на воду и предложим возврат или перенос.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4C5; Могу перенести запись?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Отменяем бронь не позднее 48 часов до начала. При записи день в день отмены и переноса нет.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F465; Сколько человек помещается?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">До 4 человек одновременно.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F3CA; Нужен ли опыт гребли?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Нет, главное — синхронность. Инструктор покажет технику прямо на месте.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F9BA; Что включено?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Доска, 4 весла, жилеты на всех участников.</div></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Правила клуба<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Арендуя оборудование, гость подтверждает, что <strong style="color:var(--txt)">прошёл обучение и&nbsp;знает технику безопасности на&nbsp;воде</strong>, умеет действовать при ухудшении погоды, может рассчитать силы для возвращения на&nbsp;станцию и&nbsp;в&nbsp;случае необходимости <strong style="color:var(--txt)">в&nbsp;состоянии нести оборудование в&nbsp;руках</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Перед выходом на&nbsp;воду гость должен <strong style="color:var(--txt)">самостоятельно убедиться в&nbsp;исправности оборудования</strong>. При вопросах — уточнить у&nbsp;сотрудника на&nbsp;станции.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Мы работаем по&nbsp;записи. <strong style="color:var(--txt)">При опоздании более чем на&nbsp;15 минут время сеанса начинает идти автоматически.</strong> После вашего сеанса начинается следующий.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Дождь не&nbsp;является причиной для отмены. В&nbsp;случае грозы, ветра выше 6&nbsp;м/с или урагана мы не&nbsp;выпустим вас на&nbsp;воду и&nbsp;предложим возврат или перенос. Если вы не&nbsp;можете приехать — <strong style="color:var(--txt)">отменяем бронь не&nbsp;позднее 48&nbsp;часов до&nbsp;начала сеанса. При записи день в&nbsp;день отмены и&nbsp;переноса нет.</strong></span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">При порче оборудования по&nbsp;вашей вине вы обязаны <strong style="color:var(--txt)">возместить его стоимость по&nbsp;рыночной цене и&nbsp;компенсировать дни простоя</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№6</span><span class="m-rule-txt"><strong style="color:var(--txt)">Сотрудники станции ответственности за&nbsp;оставленные вещи не&nbsp;несут.</strong></span></div>
+          <div class="m-sub-title">Отказ от претензий</div>
+          <div class="m-disclaimer">
+            <p>Я принимаю на&nbsp;себя всю ответственность за&nbsp;возможные травмы и&nbsp;последствия несчастных случаев во&nbsp;время нахождения на&nbsp;воде.</p>
+            <p style="margin-top:8px">Я физически и&nbsp;морально подготовлен и&nbsp;принимаю все риски, связанные с&nbsp;водными активностями.</p>
+            <p style="margin-top:8px">Я осознаю, что ценные вещи на&nbsp;воде могут утонуть или испортиться. Клуб за&nbsp;это ответственности не&nbsp;несёт.</p>
+            <p style="margin-top:8px">Вы выражаете согласие на&nbsp;фото- и&nbsp;видеосъёмку и&nbsp;её размещение на&nbsp;сайте и&nbsp;в&nbsp;наших соцсетях. Если хотите отказаться — сообщите сотрудникам на&nbsp;станции.</p>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Техника безопасности<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Выход на&nbsp;воду осуществляется исключительно <strong style="color:var(--txt)">в&nbsp;спасательном жилете и&nbsp;со&nbsp;страховочным лишем на&nbsp;ноге</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Запрещается находиться на&nbsp;линии судового хода. При движении вдоль реки — <strong style="color:var(--txt)">не&nbsp;далее 5&nbsp;метров от&nbsp;берега</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Запрещается выход на&nbsp;воду при <strong style="color:var(--txt)">ветре сильнее 7&nbsp;м/с, грозе или урагане</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Запрещено стоять <strong style="color:var(--txt)">рядом с&nbsp;любыми твёрдыми объектами</strong>: пирсом, причалом, яхтами и&nbsp;т.&nbsp;д.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">К&nbsp;выходу на&nbsp;воду не&nbsp;допускаются: <strong style="color:var(--txt)">гости в&nbsp;состоянии алкогольного или наркотического опьянения, с&nbsp;медицинскими противопоказаниями, не&nbsp;умеющие плавать</strong>.</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <a href="https://t.me/supsup_moscow" target="_blank" class="mcta">Написать в Телеграм</a>
+    <p class="mnote">Запись обсуждается индивидуально в чате</p>
   </div>
 </div>
 
@@ -1053,8 +1249,74 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       </ul>
     </div>
 
-    <a href="https://n1462790.yclients.com/select-city/2/select-branch?previousStepUrl=%2Fcompany%2F1322144%2Factivity%2Fselect%3Fo%3Dm-1act2025-06-24&amp;o=m-1act2025-06-24" target="_blank" class="mcta">Забронировать</a>
-    <p class="mnote">Запись доступна на&nbsp;станцию в&nbsp;Строгино. Хорошего должно быть много!</p>
+    <div class="m-acc" style="margin-bottom:18px">
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Ответы на распространённые вопросы<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-faq">
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F555; Во сколько приезжать?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Приходите за 20 минут до записи, чтобы успеть припарковаться и переодеться.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F327;&#xFE0F; А если дождь?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Дождь не является причиной отмены. В случае грозы, ветра выше 6 м/с или урагана не выпустим на воду и предложим возврат или перенос.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F4C5; Могу перенести запись?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Отменяем бронь не позднее 48 часов до начала. При записи день в день отмены и переноса нет.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F465; Сколько человек?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">До 8 человек одновременно.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F9CD; Можно ли стоять на ходу?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Да, но осторожно. Лучше стоять у центра или сидеть.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F96A; Можно ли с едой и напитками?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Да, но помните, что вы находитесь на воде. Есть или пить во время активного движения запрещено. Не забудьте убрать за собой и, пожалуйста, не пачкайте оборудование.</div></div>
+            </div>
+            <div class="m-faq-item">
+              <button class="m-faq-btn" onclick="mfaq(this)">&#x1F6A3; Кто гребёт?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+              <div class="m-faq-body"><div class="m-faq-in">Вся компания вместе или по очереди. Инструктор покажет как.</div></div>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Правила клуба<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Арендуя оборудование, гость подтверждает, что <strong style="color:var(--txt)">прошёл обучение и&nbsp;знает технику безопасности на&nbsp;воде</strong>, умеет действовать при ухудшении погоды, может рассчитать силы для возвращения на&nbsp;станцию и&nbsp;в&nbsp;случае необходимости <strong style="color:var(--txt)">в&nbsp;состоянии нести оборудование в&nbsp;руках</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Перед выходом на&nbsp;воду гость должен <strong style="color:var(--txt)">самостоятельно убедиться в&nbsp;исправности оборудования</strong>. При вопросах — уточнить у&nbsp;сотрудника на&nbsp;станции.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Мы работаем по&nbsp;записи. <strong style="color:var(--txt)">При опоздании более чем на&nbsp;15 минут время сеанса начинает идти автоматически.</strong> После вашего сеанса начинается следующий.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Дождь не&nbsp;является причиной для отмены. В&nbsp;случае грозы, ветра выше 6&nbsp;м/с или урагана мы не&nbsp;выпустим вас на&nbsp;воду и&nbsp;предложим возврат или перенос. Если вы не&nbsp;можете приехать — <strong style="color:var(--txt)">отменяем бронь не&nbsp;позднее 48&nbsp;часов до&nbsp;начала сеанса. При записи день в&nbsp;день отмены и&nbsp;переноса нет.</strong></span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">При порче оборудования по&nbsp;вашей вине вы обязаны <strong style="color:var(--txt)">возместить его стоимость по&nbsp;рыночной цене и&nbsp;компенсировать дни простоя</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№6</span><span class="m-rule-txt"><strong style="color:var(--txt)">Сотрудники станции ответственности за&nbsp;оставленные вещи не&nbsp;несут.</strong></span></div>
+          <div class="m-sub-title">Отказ от претензий</div>
+          <div class="m-disclaimer">
+            <p>Я принимаю на&nbsp;себя всю ответственность за&nbsp;возможные травмы и&nbsp;последствия несчастных случаев во&nbsp;время нахождения на&nbsp;воде.</p>
+            <p style="margin-top:8px">Я физически и&nbsp;морально подготовлен и&nbsp;принимаю все риски, связанные с&nbsp;водными активностями.</p>
+            <p style="margin-top:8px">Я осознаю, что ценные вещи на&nbsp;воде могут утонуть или испортиться. Клуб за&nbsp;это ответственности не&nbsp;несёт.</p>
+            <p style="margin-top:8px">Вы выражаете согласие на&nbsp;фото- и&nbsp;видеосъёмку и&nbsp;её размещение на&nbsp;сайте и&nbsp;в&nbsp;наших соцсетях. Если хотите отказаться — сообщите сотрудникам на&nbsp;станции.</p>
+          </div>
+        </div></div>
+      </div>
+      <div class="m-acc-item">
+        <button class="m-acc-btn" onclick="mtf(this)">Техника безопасности<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="m-acc-body"><div class="m-acc-in">
+          <div class="m-rule"><span class="m-rule-num">№1</span><span class="m-rule-txt">Выход на&nbsp;воду осуществляется исключительно <strong style="color:var(--txt)">в&nbsp;спасательном жилете и&nbsp;со&nbsp;страховочным лишем на&nbsp;ноге</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№2</span><span class="m-rule-txt">Запрещается находиться на&nbsp;линии судового хода. При движении вдоль реки — <strong style="color:var(--txt)">не&nbsp;далее 5&nbsp;метров от&nbsp;берега</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№3</span><span class="m-rule-txt">Запрещается выход на&nbsp;воду при <strong style="color:var(--txt)">ветре сильнее 7&nbsp;м/с, грозе или урагане</strong>.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№4</span><span class="m-rule-txt">Запрещено стоять <strong style="color:var(--txt)">рядом с&nbsp;любыми твёрдыми объектами</strong>: пирсом, причалом, яхтами и&nbsp;т.&nbsp;д.</span></div>
+          <div class="m-rule"><span class="m-rule-num">№5</span><span class="m-rule-txt">К&nbsp;выходу на&nbsp;воду не&nbsp;допускаются: <strong style="color:var(--txt)">гости в&nbsp;состоянии алкогольного или наркотического опьянения, с&nbsp;медицинскими противопоказаниями, не&nbsp;умеющие плавать</strong>.</span></div>
+        </div></div>
+      </div>
+    </div>
+
+    <a href="https://t.me/supsup_moscow" target="_blank" class="mcta">Написать в Телеграм</a>
+    <p class="mnote">Запись обсуждается индивидуально в чате</p>
   </div>
 </div>
 
@@ -1118,7 +1380,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
     <div class="rv"><p class="stag">Почему мы</p><h2 class="stitle">Наши преимущества</h2></div>
     <div class="agrid">
       <div class="acard rv">
-        <div class="ico-box"><svg class="ico" viewBox="0 0 24 24"><ellipse cx="12" cy="18" rx="7" ry="3"/><path d="M12 15 L12 4"/><path d="M9 7 Q12 3 15 7"/><line x1="10" y1="11" x2="14" y2="11"/></svg></div>
+        <div class="ico-box"><svg class="ico" viewBox="0 0 24 24"><path d="M9 11 Q9 3 12 3 Q15 3 15 11 Q15 13 12 14 Q9 13 9 11Z"/><line x1="12" y1="14" x2="12" y2="22"/></svg></div>
         <div><div class="atitle">Оборудование</div><div class="atxt">Мы регулярно обновляем парк наших ярких досок, следим за их состоянием и стараемся предложить вам что-то новое.</div></div>
       </div>
       <div class="acard rv">
@@ -1130,7 +1392,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
         <div><div class="atitle">Быстрый старт</div><div class="atxt">От приезда до воды — 15 минут. Оборудование подготовлено заранее к вашему времени.</div></div>
       </div>
       <div class="acard rv">
-        <div class="ico-box"><svg class="ico" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="ico-box"><svg class="ico" viewBox="0 0 24 24"><path d="M8 4 L8 20"/><path d="M8 4 L13 4 Q17 4 17 9 Q17 14 13 14 L8 14"/><line x1="6" y1="17" x2="15" y2="17"/></svg></div>
         <div><div class="atitle">Честные цены</div><div class="atxt">Никаких скрытых платежей. Доска, весло, жилет и лиш — всё включено в стоимость.</div></div>
       </div>
       <div class="acard rv">
