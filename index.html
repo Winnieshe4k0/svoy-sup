@@ -19,12 +19,14 @@
 <link rel="icon" type="image/svg+xml" href="images/logo.svg">
 <link rel="apple-touch-icon" href="images/logo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --red:#d41c1e; --red-dk:#a81416; --red-lt:#fdf0f0;
   --white:#fff; --off:#fdf8f8; --border:#f0d8d8;
   --txt:#1a1a1a; --muted:#777; --r:18px;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --ease-in-out:cubic-bezier(0.77,0,0.175,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -53,15 +55,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:#fff;border-botto
 .hero{min-height:100svh;background:var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 80px;position:relative;overflow:hidden}
 .hero-logo{width:min(300px,62vw);margin-bottom:36px;border-radius:50%;position:relative;z-index:2;animation:float 7s ease-in-out infinite;box-shadow:0 0 0 4px rgba(255,255,255,.55),0 0 0 9px rgba(255,255,255,.18),0 28px 70px rgba(0,0,0,.25)}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero h1{font-family:'Russo One',sans-serif;font-size:clamp(22px,4.5vw,42px);color:#fff;line-height:1.15;margin-bottom:20px;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:2;max-width:560px}
+.hero h1{font-family:'Nunito',sans-serif;font-weight:300;font-size:clamp(18px,3.8vw,36px);color:rgba(255,255,255,.85);line-height:1.25;margin-bottom:20px;letter-spacing:3px;text-transform:uppercase;position:relative;z-index:2;max-width:560px}
 .hero-plaque{display:inline-block;background:rgba(0,0,0,.22);border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);padding:7px 24px;border-radius:28px;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px;position:relative;z-index:2}
-.hero-stat{font-size:15px;color:rgba(255,255,255,.62);font-weight:600;letter-spacing:.5px;margin-bottom:36px;position:relative;z-index:2}
+.hero-stat{font-size:15px;color:rgba(255,255,255,.62);font-family:'Nunito',sans-serif;font-weight:300;letter-spacing:3px;text-transform:uppercase;margin-bottom:36px;position:relative;z-index:2}
 .mob-br{display:none}
 @media(max-width:768px){.mob-br{display:block}}
+
+/* TOUCH FEEDBACK — :active для пальца */
+.btn-w:active,.btn-ow:active{transform:scale(0.97)!important;transition:transform 100ms}
+.nbtn:active,.mcta:active,.tg-btn:active,.call-btn:active,.dir-btn:active{transform:scale(0.97)!important;transition:transform 100ms}
+.sc:active{transform:translateY(-2px)!important;transition:transform 120ms}
+.fq:active,.m-acc-btn:active,.m-faq-btn:active,.loc-btn:active{opacity:.7;transition:opacity 100ms}
+
+/* NO HOVER ON TOUCH — отключаем hover-эффекты на телефонах */
+@media(hover:none){
+  .sc:hover{transform:none;box-shadow:none;border-color:var(--border)}
+  .btn-w:hover{transform:none;box-shadow:none}
+  .nbtn:hover{background:var(--red);transform:none}
+  .tg-btn:hover{background:#2AABEE;transform:none}
+  .mcta:hover{background:var(--red)}
+  .dir-btn:hover{background:var(--red)}
+  .sc:hover{border-color:var(--border)}
+}
+
+/* BACKDROP-FILTER — отключаем на мобиле (дорого для Android) */
+@media(max-width:768px){
+  .moverlay{backdrop-filter:none}
+  #ph-lightbox{backdrop-filter:none}
+}
+
+/* PREFERS-REDUCED-MOTION — уважаем настройки пользователя */
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  .book-pulse{animation:none}
+}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2}
 .btn-w{background:#fff;color:var(--red);border:none;padding:15px 36px;border-radius:36px;font:800 16px 'Nunito',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;display:inline-block}
 .btn-w:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.22)}
-.btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);padding:15px 36px;border-radius:36px;font:700 16px 'Nunito',sans-serif;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-ow{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);padding:15px 36px;border-radius:36px;font:700 16px 'Nunito',sans-serif;cursor:pointer;transition:background .2s,border-color .2s,color .2s;text-decoration:none;display:inline-block}
 .btn-ow:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.9)}
 .hero-stats{display:flex;gap:40px;margin-top:52px;position:relative;z-index:2;flex-wrap:wrap;justify-content:center}
 .hs-num{font-family:'Russo One',sans-serif;font-size:32px;color:#fff}
@@ -96,8 +128,8 @@ section{padding:80px 20px}
 /* MODAL */
 .moverlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(20,0,0,.58);backdrop-filter:blur(5px);align-items:center;justify-content:center;padding:20px}
 .moverlay.open{display:flex}
-.mdlg{background:#fff;border-radius:24px;max-width:560px;width:100%;max-height:90svh;overflow-y:auto;padding:36px;position:relative;animation:mIn .3s cubic-bezier(.34,1.56,.64,1)}
-@keyframes mIn{from{opacity:0;transform:scale(.92) translateY(20px)}to{opacity:1;transform:none}}
+.mdlg{background:#fff;border-radius:24px;max-width:560px;width:100%;max-height:90svh;overflow-y:auto;padding:36px;position:relative;animation:mIn .22s var(--ease-out)}
+@keyframes mIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
 .mc{position:absolute;top:18px;right:18px;background:var(--red-lt);border:none;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 .mc svg{width:15px;height:15px;stroke:var(--red);stroke-width:2.5;fill:none}
 .mico{width:64px;height:64px;background:var(--red-lt);border-radius:18px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
@@ -302,7 +334,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 .fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px}
 
 /* REVEAL */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease-out),transform .4s var(--ease-out)}
 .rv.vis{opacity:1;transform:none}
 /* GALLERY */
 .gal-wrap{overflow:hidden}
@@ -485,6 +517,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <p style="font-family:'Russo One',sans-serif;font-size:clamp(32px,7vw,58px);color:#fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;position:relative;z-index:2;line-height:1">Свой в доску</p>
   <h1>Прокат сапбордов и&nbsp;каяков в&nbsp;Москве</h1>
   <div class="hero-plaque">Строгино · Серебряный Бор · Живописный мост</div>
   <p class="hero-stat">Поставили на&nbsp;сап<br class="mob-br"> более 17.000 человек</p>
@@ -581,7 +614,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       <div class="sc rv" onclick="om('mdrag')">
         <div class="sc-stripe"></div>
         <div class="sc-name">Дракон-сап</div>
-        <div class="sc-short">Самая длинная доска в&nbsp;Москве — 6,5&nbsp;метров! Для компании до&nbsp;4&nbsp;человек.</div>
+        <div class="sc-short">Самая длинная доска в&nbsp;Москве — 6,5&nbsp;метров! Для компании 4–5&nbsp;человек (зависит от&nbsp;веса). У&nbsp;нас 2&nbsp;Дракона!</div>
         <div class="sc-price" style="color:var(--txt)" data-pid="dragon-card">5 000 ₽ <span>/ 2 часа</span></div>
         <div class="sc-photos" data-card-photos="dragon"><div class="sc-ph-slot"></div><div class="sc-ph-slot"></div><div class="sc-ph-slot"></div></div>
         <div class="sc-more">Подробнее <svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -663,7 +696,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
                 <div class="m-faq-opt">
                   <div class="m-faq-opt-num">1</div>
                   <div>
-                    <strong>Экспресс-обучение</strong> — наш инструктор объяснит и&nbsp;покажет всю теорию на&nbsp;берегу, а&nbsp;также ответит на&nbsp;вопросы.
+                    <strong>Экспресс-обучение</strong> — мы расскажем всю теорию на&nbsp;берегу, покажем особенности данной локации, а&nbsp;также ответим на&nbsp;ваши вопросы.
                     <span class="m-faq-price">300&nbsp;₽</span>
                     <span class="m-faq-hint">Услугу можно получить на&nbsp;месте, обратившись к&nbsp;инструктору.</span>
                   </div>
@@ -671,7 +704,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
                 <div class="m-faq-opt">
                   <div class="m-faq-opt-num">2</div>
                   <div>
-                    <strong>Прогулка с&nbsp;инструктором</strong> — расскажем всё на&nbsp;берегу, а&nbsp;затем сопроводим по&nbsp;живописному маршруту. По&nbsp;пути сделаем фотографии и&nbsp;загрузим на&nbsp;Яндекс Диск.
+                    <strong>Прогулка на&nbsp;сапе</strong> — расскажем всё на&nbsp;берегу, а&nbsp;затем сопроводим по&nbsp;живописному маршруту. По&nbsp;пути сделаем фотографии и&nbsp;загрузим на&nbsp;Яндекс Диск.
                     <span class="m-faq-price">от&nbsp;2&nbsp;500&nbsp;₽ / 2&nbsp;часа</span>
                     <a href="https://t.me/supsup_moscow" target="_blank" class="m-faq-tg">
                       <svg viewBox="0 0 24 24" fill="none"><path d="M21.8 2.3L1.4 10.1c-1.3.5-1.3 1.3-.2 1.6l5.1 1.6 11.8-7.4c.6-.3 1.1-.1.7.4l-9.5 8.6-.4 5.2c.5 0 .8-.2 1-.5l2.5-2.4 5.2 3.8c1 .5 1.6.3 1.8-.9l3.3-15.5c.3-1.4-.5-2-1.9-1.3z" fill="#fff"/></svg>
@@ -822,7 +855,7 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
 
             <div class="m-faq-item">
               <button class="m-faq-btn" onclick="mfaq(this)">&#x1F6F6; Чем каяк отличается от&nbsp;сапборда?<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-              <div class="m-faq-body"><div class="m-faq-in">В каяке вы сидите — это устойчивее и&nbsp;проще для новичков. Двустороннее весло даёт больше скорости и&nbsp;контроля. Каяк отлично подходит для длинных маршрутов, пар и&nbsp;тех, кто хочет комфортную прогулку без риска упасть в&nbsp;воду.</div></div>
+              <div class="m-faq-body"><div class="m-faq-in">Каяк — это лодка. Кому-то комфортнее находиться на воде, когда есть борта. В нём вы можете только сидеть. На носу и в хвостовой части есть место, куда можно положить вещи.</div></div>
             </div>
 
             <div class="m-faq-item">
@@ -1150,7 +1183,8 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       <h4>Что это такое</h4>
       <ul class="mlist">
         <li>Самая длинная доска в&nbsp;Москве — 6,5&nbsp;метров!</li>
-        <li>Для компании до&nbsp;4&nbsp;человек</li>
+        <li>Для компании 4–5&nbsp;человек (зависит от&nbsp;веса)</li>
+        <li>У&nbsp;нас 2&nbsp;Дракона — вдвойне больше веселья! Лучший вариант для корпоратива!</li>
         <li>Можно бегать по&nbsp;нему, грести на&nbsp;скорость или загорать, пока кто-то катает</li>
         <li>«Maybach среди сапов» — незабываемые впечатления</li>
       </ul>
@@ -1657,8 +1691,8 @@ footer{background:#160606;color:rgba(255,255,255,.55);padding:56px 24px 32px}
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 Свой Сап. Прокат сапбордов в Москве.<br><span style="font-size:11px;opacity:.6">ИП Эберзин А. В. · ИНН: 773423967302 · ОГРН: 325774600325136</span></span>
-      <span>Строгино, база Москомспорта</span>
+      <span>© 2026 Свой Сап. Прокат сапбордов в Москве.<br><span style="font-size:11px;opacity:.6">ИП Эберзин А. В.<br class="mob-br"> · ИНН: 773423967302<br class="mob-br"> · ОГРН: 325774600325136</span></span>
+      <span>Строгино · Серебряный Бор · Живописный мост</span>
     </div>
   </div>
 </footer>
